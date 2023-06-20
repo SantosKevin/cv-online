@@ -1,11 +1,8 @@
-"use client"
 import Footer from '../../components/Footer/Footer'
+import MainC from '../../components/MainC/MainC'
 import Navbar from '../../components/Navbar/Navbar'
 import './globals.css'
 import { Inter } from 'next/font/google'
-import { useEffect } from 'react'
-import 'aos/dist/aos.css';
-import AOS from 'aos';
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,21 +17,10 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
 
-  useEffect(() => {
-    AOS.init({
-         duration: 800,
-         once: false,
-       })
- }, [])
-
   return (
     <html lang="en">
-      {/* <Head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" />
-        <link href="https://fonts.googleapis.com/css2?family=Oxanium:wght@200;300;400;500;600;700&display=swap" rel="stylesheet" />
-      </Head> */}
       <body className={inter.className}>
+        <MainC />
         <Navbar></Navbar>
         {children}
         <Footer></Footer>
