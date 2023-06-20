@@ -1,0 +1,129 @@
+.navCustom {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 80px;
+    background: var(--bg-color);
+    padding: 0 70px;
+    transition: .5s;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 999;
+}
+
+.navCustom ul {
+    display: flex;
+}
+
+.navCustom ul li {
+    list-style: none;
+}
+.menuIcon {
+    color: var(--text-color);
+    font-size: 1.6em;
+    display: none;
+}
+.navCustom ul li a{
+    position: relative;
+    padding: 5px 20px;
+    font-size: 1.1em;
+    text-decoration: none;
+    font-weight: bold;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    color: var(--text-color);
+}
+.icon {
+    background: var(--bg-color-2);
+}
+.icon ul li a{
+    color: var(--text-color);
+}
+.navCustom ul li a span {
+    transition: .5s;
+    transition-delay: calc(.05s * var(--i));
+}
+.navCustom ul li a span:nth-child(2) {
+    position: absolute;
+    transform: translateY(35px);
+    font-size: 1.6em;
+}
+.icon ul li a span:nth-child(2) {
+    transform: translateY(2px);
+}
+.icon ul li a span:nth-child(1) {
+    transform: translateY(-30px);
+}
+.brand {
+    position: relative;
+    font-size: 1.8em;
+    font-weight: bold;
+    text-decoration: none;
+    color: var(--main-color);
+    padding: 5px 0;
+    overflow: hidden;
+}
+.brand span {
+    transition: 0.5s;
+    display: block;
+}
+
+.brand span:nth-child(1){
+    position: absolute;
+    transform: translateY(-80px);
+    font-size: 1.5em;
+}
+.icon .brand span:nth-child(1) {
+    transform: translateY(-5px);
+    color: var(--main-color);
+}
+.icon .brand span:nth-child(2) {
+    transform: translateY(35px);
+}
+
+/* Breakpoints */
+
+@media (max-width: 1366px) {
+}
+
+@media (max-width: 991px) {
+    .navCustom {
+        padding: 0 40px;
+    }
+    .menuIcon {
+        display: block;
+    }
+    .navCustom ul {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        padding: .5rem 3%;
+        background: var(--bg-color);
+        border-top: 1px solid rgba(0, 0, 0, 0.2);
+        box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+        flex-direction: column;
+    }
+    .navCustom ul li {
+        margin: 5px 0;
+    }
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 617px) {
+    .navCustom {
+        padding: 0 30px;
+    }
+}
+
+@media (max-width: 450px) {
+}
+
+@media (max-width: 365px) {
+}

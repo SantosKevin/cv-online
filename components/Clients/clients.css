@@ -1,0 +1,151 @@
+/* card future */
+.containerFutureParent {
+    background: var(--bg-color);
+    width: 100vw;
+    min-height: 100vh;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 50px 0;
+}
+.containerFuture {
+    margin: 80px 0;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+}
+
+.boxFuture {
+    position: relative;
+    width: 400px;
+    height: 500px;
+    background: rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.boxFuture::after,
+.boxFuture::before {
+    content: '';
+    position: absolute;
+    background: linear-gradient(315deg, var(--blue), var(--violet));
+    inset: -80px 100px;
+    transition: .5s;
+    filter: hue-rotate(calc(var(--i) * 120deg));
+    animation: animate 8s linear infinite;
+}
+.boxFuture::after {
+    background: linear-gradient(315deg, var(--green), var(--main-color));
+    filter: hue-rotate(calc(var(--i) * 120deg));
+    animation-delay: -2s;
+}
+.boxFuture:hover::after,
+.boxFuture:hover::before {
+    inset: -80px 80px;
+    animation-play-state: paused;
+}
+.boxFuture i {
+    position: absolute;
+    inset: 3px;
+    background: #070c23;
+    z-index: 1;
+}
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.boxFuture .contentFuture {
+    position: absolute;
+    inset: 20px;
+    background: #0d122c;
+    border: 3px solid #070c23;
+    z-index: 3;   
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    overflow: hidden;
+    background-size: cover;
+}
+
+.boxFuture .contentFuture img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.5s;
+    pointer-events: none;
+    z-index: 3;
+}
+.boxFuture:hover .contentFuture img {
+    opacity: 0;
+}
+.boxFuture .contentFuture h2 {
+    position: relative;
+    z-index: 2;
+    font-size: 1.25em;
+    text-align: center;
+    color: var(--text-color);
+    font-weight: 600;
+    line-height: 1.25em;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+.boxFuture .contentFuture h2 span {
+    font-weight: 300;
+    font-size: 0.75em;
+}
+.boxFuture .contentFuture a {
+    position: relative;
+    margin-top: 10px;
+    padding: 10px 20px;
+    background: var(--main-color);
+    color: var(--text-color);
+    border-radius: 25px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    text-decoration: none;
+    transition: 0.5s;
+}
+.boxFuture .contentFuture a:hover {
+    letter-spacing: 0.2em;
+}
+
+
+/* Breakpoints */
+
+@media (max-width: 1200px) {
+}
+
+@media (max-width: 991px) {
+}
+
+@media (max-width: 768px) {
+}
+
+@media (max-width: 617px) {
+    .boxFuture {
+        width: 300px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 450px) {
+}
+
+@media (max-width: 365px) {
+}

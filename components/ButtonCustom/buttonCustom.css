@@ -1,0 +1,53 @@
+/* button gradient */
+.btnCustom {
+    position: relative;
+    width: 200px;
+    height: 50px;
+    text-align: center;
+    line-height: 50px;
+    color: var(--text-color);
+    font-size: 1.1rem;
+    text-transform: uppercase;
+    text-decoration: none;
+    box-sizing: border-box;
+    background: linear-gradient(90deg, var(--main-color), #7f022c, var(--main-color));
+    background-size: 400%;
+    border-radius: 30px;
+    z-index: 1;
+    box-shadow: 0 0 2rem var(--main-color);
+    transition: .5s;
+}
+.btnCustom:hover {
+    cursor: pointer;
+    animation: animateBtn 8s linear infinite;
+}
+
+@keyframes animateBtn {
+    0% {
+        background-position: 0%;
+    }
+    100% {
+        background-position: 400%;
+    }
+}
+
+.btnCustom::before {
+    content: '';
+    position: absolute;
+    top: -5px;
+    left: -5px;
+    right: -5px;
+    bottom: -5px;
+    z-index: -1;
+    background: linear-gradient(90deg, var(--main-color), #7f022c, var(--main-color));
+    background-size: 400%;
+    border-radius: 40px;
+    opacity: 0;
+    transition: 1s;
+}
+
+.btnCustom:hover::before {
+    filter: blur(20px);
+    opacity: 1;
+    animation: animateBtn 8s linear infinite;
+}
