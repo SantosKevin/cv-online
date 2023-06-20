@@ -146,6 +146,12 @@
 }
 
 @media (max-width: 617px) {
+    .boxStick .contentStick .textStick h3 {
+        font-size: 1.3rem;
+    }
+    .boxStick .contentStick .textStick p {
+        font-size: .85rem;
+    }
 }
 
 @media (max-width: 450px) {
